@@ -1,0 +1,45 @@
+.star-wars-logo {
+  width: 125px;
+  height: 70px;
+  margin: 15px;
+}
+.logo-directory {
+  display: flex;
+}
+
+.directory {
+  display: flex;
+  color: white;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial,
+    sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+  align-items: center;
+}
+
+.directory p {
+  font-size: 2.3em;
+  margin-bottom: 24px;
+  line-height: 42px;
+}
+
+.header {
+  background-image: url('./../../../assests/hero-banner.jpg');
+}
+
+.header-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 350px;
+  justify-content: flex-start;
+}
+
+.local {
+  text-align: center;
+  font-weight: 300;
+}
+
+.topic-underline {
+  margin: auto;
+  border-bottom: 4px solid purple;
+  width: 100px;
+}
