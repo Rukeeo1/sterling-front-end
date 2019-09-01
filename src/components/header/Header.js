@@ -17,7 +17,7 @@ function Header() {
               <p>Directory</p>
             </div>
           </div>
-          <Hr background="white" width="295px"/>
+          <Hr background="white" height="2px" width="295px" marginTop="0px"/>
           <div className="local font-weight-bold shadow" style={{ color: "#919191", fontWeight: "400", fontSize: "1.3em" }}>Find your favour Characters, Films, Species, Starships, and Planets</div>
           {/* <input type="text" placeholder="Enter a search term" /> */}
           <Input />
