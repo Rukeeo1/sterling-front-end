@@ -1,5 +1,7 @@
 import React from 'react';
-import logo from '../../assests/logo.png'
+import logo from '../../assests/logo.png';
+import Input from '../input/Input.js'
+import Hr from '../underline/Underline'
 import './css/Header.css'
 
 
@@ -15,8 +17,10 @@ function Header() {
               <p>Directory</p>
             </div>
           </div>
-          <div className="local font-weight-bold shadow" style={{ color: "white", fontWeight: "400", fontSize: "1.3em" }}>Find your favour Characters, Films, Species, Starships, and Planets</div>
-          <input type="text" placeholder="Enter a search term" />
+          <Hr background="white" width="295px"/>
+          <div className="local font-weight-bold shadow" style={{ color: "#919191", fontWeight: "400", fontSize: "1.3em" }}>Find your favour Characters, Films, Species, Starships, and Planets</div>
+          {/* <input type="text" placeholder="Enter a search term" /> */}
+          <Input />
         </div>
       </div>
     </>
