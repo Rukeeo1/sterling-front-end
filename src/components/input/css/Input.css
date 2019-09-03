@@ -1,5 +1,5 @@
 
-/* .main {
+ .main {
   width: 50%;
   margin: 50px auto;
 }
@@ -19,4 +19,17 @@
   text-align: center;
   pointer-events: none;
   color: #aaa;
-} */
+} 
+
+ .search input{
+width: 480px;
+
+} 
+
+.search .fa-search {
+  position: absolute;
+  top: 8px !important;
+  left: 7px;
+  font-size: 15px;
+}
+
