@@ -2,22 +2,35 @@ import React, {useEffect, useState} from 'react'
 import starship1 from '../../assests/starship-1.jpg'
 import './css/Starship.css'
 import Card from '../card/Card.js'
-
+import Axios from 'axios';
 
 
 
 function Starships(){
 
   const [starships, setStarships] = useState('');
+
+  useEffect(()=> {
+    Axios.get('https://swapi.co/api/starships/').then(res => {
+      const ships = res.data.results.slice(0,6) 
+      setStarships(ships)
+    }
+    ).catch(err =>{
+      console.log(err)
+    })
+  },[])
+
+  if(!starships) return ''
   return (
     <>
     <div className="d-flex justify-content-between starship-flex">
-   <Card wrappingDiv="card shadow" objectName="Ghost" imageSource={starship1} description="The Ghost is a modified VCX-100 light weight manufactured by the Canadian Engineering Corporation" readmorestyle="space-ship-readmore" style={{marginTop:"20px"}}/>
-
-   <Card wrappingDiv="card shadow" objectName="Ghost" imageSource={starship1} description="The Ghost is a modified VCX-100 light weight manufactured by the Canadian Engineering Corporation" readmorestyle="space-ship-readmore"/>
-
-   <Card wrappingDiv="card shadow" objectName="Ghost" imageSource={starship1} description="The Ghost is a modified VCX-100 light weight manufactured by the Canadian Engineering Corporation" readmorestyle="space-ship-readmore"/>
-
+      {
+        starships.map((ship, index) => {
+          return (
+            <Card key={index} wrappingDiv="card shadow" objectName={ship.name} imageSource={starship1} description={`The ${ship.name} is a modified ${ship.model} light weight manufactured by the ${ship.manufacturer}`} readmorestyle="space-ship-readmore" style={{marginTop:"20px"}}/>
+          )
+        })
+      }
    </div>
    </>
   )
