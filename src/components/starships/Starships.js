@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import starship1 from '../../assests/starship-1.jpg'
 import './css/Starship.css'
 import Card from '../card/Card.js'
@@ -7,6 +7,8 @@ import Card from '../card/Card.js'
 
 
 function Starships(){
+
+  const [starships, setStarships] = useState('');
   return (
     <>
     <div className="d-flex justify-content-between starship-flex">
@@ -16,11 +18,6 @@ function Starships(){
 
    <Card wrappingDiv="card shadow" objectName="Ghost" imageSource={starship1} description="The Ghost is a modified VCX-100 light weight manufactured by the Canadian Engineering Corporation" readmorestyle="space-ship-readmore"/>
 
-   <Card wrappingDiv="card shadow" objectName="Ghost" imageSource={starship1} description="The Ghost is a modified VCX-100 light weight manufactured by the Canadian Engineering Corporation" readmorestyle="space-ship-readmore"/>
-
-   <Card wrappingDiv="card shadow" objectName="Ghost" imageSource={starship1} description="The Ghost is a modified VCX-100 light weight manufactured by the Canadian Engineering Corporation" readmorestyle="space-ship-readmore"/>
-
-   <Card wrappingDiv="card shadow" objectName="Ghost" imageSource={starship1} description="The Ghost is a modified VCX-100 light weight manufactured by the Canadian Engineering Corporation" readmorestyle="space-ship-readmore"/>
    </div>
    </>
   )
