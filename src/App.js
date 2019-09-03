@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from  './components/header/Header.js'
-import Input from './components/input/Input'
+import Starships from './components/starships/Starships'
+
 import Popular from './components/popular/Popular'
 import './App.css';
 
@@ -9,6 +10,7 @@ function App() {
     <div className="App">
      <Header />
      <Popular />
+     <Starships />
     </div>
   );
 }
