@@ -42,6 +42,13 @@ align-items: center;
 .local {
   text-align: center;
   font-weight: 300;
+  color: rgb(145, 145, 145);
+  font-weight: 400;
+  font-size: 1.3em;
+  display: flex;
+  flex-wrap: wrap;
+  width: 430px;
+  max-width:100%;
 }
 
 .topic-underline {
