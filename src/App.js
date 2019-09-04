@@ -10,6 +10,7 @@ import StarshipPage from './components/starshippage/Starship.page'
 import CharacterPage from './components/characterpage/CharacterPage'
 
 import ReadMoreAboutCharacter from './components/readmore/ReadMoreCharacters'
+import ReadMoreAboutStarships from './components/readmore/ReadMoreStarShips'
 import './App.css';
 
 const Homepage = () => {
@@ -37,6 +38,7 @@ function App() {
           <Route path="/" exact component={Homepage} />
           <Route path="/starship" exact component= {StarshipPage} />
           <Route path="/characters" exact component={CharacterPage} />
+          <Route path="/starship/:id" component={ReadMoreAboutStarships} />
           <Route path="/character/:id" component={ReadMoreAboutCharacter} />
         </Switch>
       </div>
