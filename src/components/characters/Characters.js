@@ -10,7 +10,7 @@ const pictures = [Luke,CThirty, Luke, CThirty]
 
 function Characters() {
   const [characters, setUseCharacters] = useState()
-  console.log(characters,'hello')
+  
   useEffect(()=> {
     axios.get('https://swapi.co/api/people/').then(res=> {
       const characters = res.data.results.slice(0,4) 

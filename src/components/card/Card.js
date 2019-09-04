@@ -3,10 +3,7 @@ import {Link} from 'react-router-dom'
 import './css/Card.css'
 
 function Card(props){
-
   const starshipId = getId(props)
-  console.log(starshipId)
-
 
   return (
     

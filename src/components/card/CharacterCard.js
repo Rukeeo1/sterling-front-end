@@ -1,8 +1,5 @@
 import React from 'react';
 import {Link} from 'react-router-dom'
- {/* <Link to={`/videos/${movie._id}`} className="btn btn-primary">
-                  See Profile
-                </Link> */}
 
 function CharacterCard(props) {
   console.log(props,'hello')
