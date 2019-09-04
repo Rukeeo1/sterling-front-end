@@ -1,23 +1,31 @@
 import React, { useState, useEffect } from 'react'
-import Card from '../card/Card'
+import CharacterCard from '../card/CharacterCard'
 import Popular from '../popular/Popular'
 import Header from '../header/Header'
 import axios from 'axios'
-import starship1 from '../../assests/starship-2.jpg'
+import Luke from '../../assests/character-1.jpg'
+import CThirty from '../../assests/character-2.jpg'
+import Character3 from '../../assests/character-3.jpg'
+import Character4 from '../../assests/character-4.jpg'
+
+const characterPictures = [Luke, CThirty, Character3, Character4]
+
+const generateRandom = () => Math.floor(Math.random() * 4) + 1  
+
 
 function CharacterPage(props) {
-  const [starShips, setStarShips] = useState('');
+  const [characters, setCharacters] = useState('');
 
   useEffect(() => {
-    axios.get('https://swapi.co/api/starships/').then(res => {
-      setStarShips(res.data.results)
+    axios.get('https://swapi.co/api/people').then(res => {
+      setCharacters(res.data.results)
     }
     ).catch(err => {
       console.log(err)
     })
   }, [])
 
-  if (!starShips) return ''
+  if (!characters) return ''
 
   return (
     <>
@@ -25,11 +33,18 @@ function CharacterPage(props) {
       <div className="mt-lg-5">
         <Popular subject="Popular Characters" />
       </div>
-      <div className="d-flex justify-content-between starship-flex">
+      <div className="d-flex !important justify-content-center flex-wrap ">
         {
-          starShips.map((ship, index) => {
+          characters.map(character => {
             return (
-              <Card key={index} wrappingDiv="card shadow" objectName={ship.name} imageSource={starship1} description={`The ${ship.name} is a modified ${ship.model} light weight manufactured by the ${ship.manufacturer}`} readmorestyle="space-ship-readmore" style={{ marginTop: "20px" }} />
+              <>
+                {
+                  characters.map((character, index) => {
+                    return <CharacterCard key={index} name={character.name} imageSource={characterPictures [generateRandom() ]}  />
+                  })
+                }
+
+              </>
             )
           })
         }

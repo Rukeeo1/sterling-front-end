@@ -10,6 +10,7 @@ const pictures = [Luke,CThirty, Luke, CThirty]
 
 function Characters() {
   const [characters, setUseCharacters] = useState()
+  console.log(characters,'hello')
   useEffect(()=> {
     axios.get('https://swapi.co/api/people/').then(res=> {
       const characters = res.data.results.slice(0,4) 
@@ -25,7 +26,7 @@ function Characters() {
     <section className="d-flex !important justify-content-center flex-wrap ">
      {
        characters.map((character, index)=>{
-         return   <CharacterCard key={index} name={character.name} imageSource={pictures[index]}/>
+         return   <CharacterCard key={index} name={character.name} imageSource={pictures[index]} url={character.url}/>
        })
      }
     </section>

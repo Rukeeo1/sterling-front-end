@@ -1,7 +1,11 @@
 import React from 'react';
-
+import {Link} from 'react-router-dom'
+ {/* <Link to={`/videos/${movie._id}`} className="btn btn-primary">
+                  See Profile
+                </Link> */}
 
 function CharacterCard(props) {
+  console.log(props,'hello')
   return (
     <div class="card shadow" style={{ width: "36rem" }}>
       <div class="row m-0">
@@ -11,7 +15,7 @@ function CharacterCard(props) {
         <div class="col p-0 py-4">
           <div class="card-block px-3">
             <h4 class="card-title">{props.name}</h4>
-            <p class="card-text">{`${props.name}, a force sensitive human male, was a legendary Jedi Master who fought in the Galatic Civil War during the reign of tje Galatic Empire`} <span className="character-readmore-tag">...ReadMore</span> </p>
+            <p class="card-text">{`${props.name}, a force sensitive human male, was a legendary Jedi Master who fought in the Galatic Civil War during the reign of tje Galatic Empire`} <span className="character-readmore-tag"><Link to={`/character/${props.url}`}>...ReadMore</Link></span> </p>
           </div>
         </div>
       </div>

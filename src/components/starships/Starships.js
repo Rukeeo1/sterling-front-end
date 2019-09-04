@@ -2,16 +2,15 @@ import React, {useEffect, useState} from 'react'
 import starship1 from '../../assests/starship-1.jpg'
 import './css/Starship.css'
 import Card from '../card/Card.js'
-import Axios from 'axios';
+import axios from 'axios';
 
 
 
 function Starships(){
-
   const [starships, setStarships] = useState('');
 
   useEffect(()=> {
-    Axios.get('https://swapi.co/api/starships/').then(res => {
+    axios.get('https://swapi.co/api/starships/').then(res => {
       const ships = res.data.results.slice(0,6) 
       setStarships(ships)
     }
@@ -21,6 +20,7 @@ function Starships(){
   },[])
 
   if(!starships) return ''
+  
   return (
     <>
     <div className="d-flex justify-content-between starship-flex">
