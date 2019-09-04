@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
-import Header from '../header/Header'
+import Header from '../header/Header';
+import ViewMore from '../viewmore/Viewmore'
 import axios from 'axios'
 
 function MoreAboutStarShips({ match }){
@@ -38,6 +39,7 @@ const [starShip, setStarShip] = useState('')
 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus laboriosam enim sint reprehenderit minus sapiente nihil, sequi architecto recusandae ipsum ex doloribus aut ut impedit id iste est! Veniam optio repudiandae deleniti eum nemo sit, at earum repellendus culpa accusantium iusto magni ipsum recusandae voluptatibus similique. At nulla, omnis architecto assumenda nihil animi repudiandae quo! In facilis quis ab, sequi eum dicta corporis nesciunt fuga vero veniam mollitia repellendus labore officia, molestias aperiam minus est architecto rerum ad maiores repudiandae quam eos laboriosam. Ducimus, ratione ad. Natus temporibus quaerat deserunt modi sequi. Magni explicabo exercitationem dicta odio autem pariatur eum deserunt unde vitae cum modi iure harum, omnis commodi vero in eligendi nulla iste ratione consequuntur quas minima. Alias debitis praesentium maiores in, tempora blanditiis nam assumenda aliquam veritatis saepe et nisi corrupti, nesciunt sed. Reprehenderit praesentium perspiciatis ullam magnam quaerat ex rerum ducimus cumque, explicabo impedit qui nesciunt nulla.</p>
 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum reprehenderit nemo quasi eaque facilis veritatis! Asperiores a porro exercitationem, sunt voluptatum placeat perferendis amet distinctio id doloremque iste aliquam, maiores assumenda esse harum accusantium quia possimus facilis incidunt omnis nisi doloribus modi minima aliquid! Ipsam, minima ut voluptatum id laboriosam harum animi ab sed suscipit? Eligendi fugiat, aliquam quaerat cupiditate doloribus reiciendis libero architecto, consectetur a quidem harum vero dolorem id similique voluptate facilis unde est enim saepe at impedit quisquam explicabo? Minus libero fugiat incidunt, saepe sit illo neque.
 </p>
+<ViewMore tag="Recently Viewed Starships" />
 </div>
 </div>
 </>
