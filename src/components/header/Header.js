@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link } from 'react-router-dom'
 import logo from '../../assests/logo.png';
 import Input from '../input/Input.js'
 import Hr from '../underline/Underline'
@@ -9,7 +10,9 @@ function Header() {
   return (
     <>
       <div className="header">
+        <Link to="/">
         <img src={logo} alt="logo" className="star-wars-logo ml-lg-5 mt-5" />
+        </Link>
         <div className="header-title" style={{ color: "red" }}>
           <div className="logo-directory">
             <img src={logo} alt="logo" className="star-wars-logo" />
