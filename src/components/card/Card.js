@@ -1,7 +1,12 @@
 import React from 'react';
+import {Link} from 'react-router-dom'
 import './css/Card.css'
 
 function Card(props){
+
+  const starshipId = getId(props)
+  console.log(starshipId)
+
 
   return (
     
@@ -11,7 +16,7 @@ function Card(props){
           <h4 className="card-title mb-1" style={{fontSize:"20px"}}>{props.objectName}</h4>
           <p className="card-text mb-lg-0 mt-3px">{props.description}
           </p>
-          <a href="#" className="btn btn-primary mt-lg-0 pl-4 pr-4" style={{marginLeft:"100px"}}>Read More
+          <a href="#" className="btn btn-primary mt-lg-0 pl-4 pr-4" style={{marginLeft:"100px"}}><Link to={`/starship/${starshipId}`}>Read More</Link>
           <i className="fas fa-arrow-right ml-2" ></i>
           </a>
         </div>
@@ -19,5 +24,11 @@ function Card(props){
    
   )
   }
+
+function getId (props){
+  const splitPropsUrl=  props.url.split('/')
+ return  splitPropsUrl[5]
+  
+}
 
 export default Card
