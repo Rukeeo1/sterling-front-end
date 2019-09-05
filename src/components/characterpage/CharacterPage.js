@@ -11,7 +11,7 @@ import SelectTagInput from '../selectTagInput/SelectTagInput'
 
 const characterPictures = [Luke, CThirty, Character3, Character4]
 
-const generateRandom = () => Math.floor(Math.random() * 4) + 1  
+const generateRandom = () => Math.floor(Math.random() * 3) + 1  
 
 
 function CharacterPage(props) {
@@ -44,14 +44,14 @@ function CharacterPage(props) {
 
   return (
     <>
-      <Header />
-      <div className="mt-lg-5">
+      <Header page="characters" />
+      <div className="mt-lg-5 container">
         <Popular subject="Popular Characters" />
       </div>
-      <div>
+      <div className="">
       <SelectTagInput onChange={filterGender}/>
       </div>
-      <div className="d-flex !important justify-content-center flex-wrap ">
+      <div className="d-flex !important justify-content-center flex-wrap characters-display">
         {
           characters.map((character,index) => {
             return (
