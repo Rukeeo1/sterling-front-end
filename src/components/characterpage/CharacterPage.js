@@ -18,6 +18,7 @@ function CharacterPage(props) {
 
   useEffect(() => {
     axios.get('https://swapi.co/api/people').then(res => {
+      console.log(res.data.results)
       setCharacters(res.data.results)
     }
     ).catch(err => {
@@ -35,16 +36,10 @@ function CharacterPage(props) {
       </div>
       <div className="d-flex !important justify-content-center flex-wrap ">
         {
-          characters.map(character => {
+          characters.map((character,index) => {
             return (
-              <>
-                {
-                  characters.map((character, index) => {
-                    return <CharacterCard key={index} name={character.name} imageSource={characterPictures [generateRandom() ]}  />
-                  })
-                }
-
-              </>
+              <CharacterCard key={index} name={character.name} imageSource={characterPictures [generateRandom() ]}  />
+          
             )
           })
         }
