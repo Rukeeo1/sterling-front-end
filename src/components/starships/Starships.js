@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import starship1 from '../../assests/starship-1.jpg'
+import ButtonGroup from '../buttonGroups/ButtonGroups'
 import './css/Starship.css'
 import Card from '../card/Card.js'
 import axios from 'axios';
@@ -32,7 +33,9 @@ function Starships(){
           )
         })
       }
+   
    </div>
+
    </>
   )
 }
