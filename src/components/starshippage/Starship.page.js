@@ -3,19 +3,50 @@ import Card from '../card/Card'
 import Popular from '../popular/Popular'
 import Header from '../header/Header'
 import axios from 'axios'
+import ButtonGroup from '../buttonGroups/ButtonGroups'
 import starship1 from '../../assests/starship-2.jpg'
 
 function StarshipPage(props) {
-  const [starShips, setStarShips] = useState('');
+  let [starShips, setStarShips] = useState('');
+  let [previousPage, setPreviousPage] = useState(1);
+  let [nextPage, setNextPage] = useState(2);
+  let [totalPage, setTotalPage] = useState('37')
+
+  const previousPaginationHandler = (e) => {
+    if (previousPage < 1){
+      setNextPage(10)
+     return;
+    } 
+    setPreviousPage(previousPage--)
+    const nextPageValue = ((previousPage - 1) * 10) + (starShips.length);
+    setNextPage(nextPageValue);//
+  }
+
+  const nextPaginationHandler = (e) => {
+   if (nextPage > totalPage){
+     setNextPage('37')
+    return nextPage;
+   } 
+
+    setPreviousPage(previousPage++)
+    const nextPageValue = ((previousPage - 1) * 10) + (starShips.length);
+    setNextPage(nextPageValue);//
+  }
+
+
+  console.log(previousPage, ' this is previous')
+  const api = `https://swapi.co/api/starships/?page=${previousPage}`
+
 
   useEffect(() => {
-    axios.get('https://swapi.co/api/starships/').then(res => {
+    axios.get(`${api}`).then(res => {
+      setTotalPage(res.data.count)
       setStarShips(res.data.results)
     }
     ).catch(err => {
       console.log(err)
     })
-  }, [])
+  }, [previousPage])
 
   if (!starShips) return ''
 
@@ -34,6 +65,7 @@ function StarshipPage(props) {
           })
         }
       </div>
+      <ButtonGroup previousFunction={() => previousPaginationHandler()} nextFunction={() => nextPaginationHandler()} totalPage={totalPage} previousPage={previousPage} nextPage={nextPage} />
     </>
 
   )
