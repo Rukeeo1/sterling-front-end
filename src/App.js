@@ -19,7 +19,7 @@ import './App.css';
 const Homepage = () => {
   return (
     <>
-      <Header />
+      <Header page="homepage" />
       <Popular subject="Popular Ships" />
       <Starships />
       <ViewMore page="starship"/>
