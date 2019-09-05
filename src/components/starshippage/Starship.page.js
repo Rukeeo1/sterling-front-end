@@ -21,7 +21,7 @@ function StarshipPage(props) {
 
   return (
     <>
-      <Header />
+      <Header page="starship" />
       <div className="mt-lg-5">
         <Popular subject="Popular Starships" />
       </div>
