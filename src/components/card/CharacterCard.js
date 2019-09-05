@@ -2,7 +2,6 @@ import React from 'react';
 import {Link} from 'react-router-dom'
 
 function CharacterCard(props) {
-  console.log(props,'hello')
   return (
     <div class="card shadow" style={{ width: "36rem" }}>
       <div class="row m-0">

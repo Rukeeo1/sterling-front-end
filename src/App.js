@@ -11,6 +11,9 @@ import CharacterPage from './components/characterpage/CharacterPage'
 
 import ReadMoreAboutCharacter from './components/readmore/ReadMoreCharacters'
 import ReadMoreAboutStarships from './components/readmore/ReadMoreStarShips'
+import ButtonGroup from './components/buttonGroups/ButtonGroups'
+
+import SelectInputTag from './components/selectTagInput/SelectTagInput'
 import './App.css';
 
 const Homepage = () => {
@@ -26,7 +29,6 @@ const Homepage = () => {
       <Characters />
       <ViewMore page="characters"/>
     </>
-
   )
 }
 

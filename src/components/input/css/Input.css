@@ -27,9 +27,10 @@ width: 480px;
 } 
 
 .search .fa-search {
+  color:rgb(73, 73, 86);
   position: absolute;
-  top: 8px !important;
-  left: 7px;
-  font-size: 15px;
+  top: 17px !important;
+  left: 13px;
+  font-size: 22px;
 }
 
