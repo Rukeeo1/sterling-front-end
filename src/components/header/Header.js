@@ -6,7 +6,7 @@ import Hr from '../underline/Underline'
 import './css/Header.css'
 
 
-function Header() {
+function Header(props) {
   return (
     <>
       <div className="header">
@@ -23,7 +23,7 @@ function Header() {
           <Hr background="white" height="2px" width="295px" marginTop="0px"/>
           <div className="local font-weight-bold shadow" style={{ color: "#919191", fontWeight: "400", fontSize: "1.3em" }}>Find your favour Characters, Films, Species, Starships, and Planets</div>
           {/* <input type="text" placeholder="Enter a search term" /> */}
-          <Input />
+          <Input searchtype={props.page} />
         </div>
       </div>
     </>

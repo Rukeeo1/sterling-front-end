@@ -3,10 +3,13 @@ import {Link} from 'react-router-dom'
 import './css/Card.css'
 
 function Card(props){
-  const starshipId = getId(props)
+  // const starshipId = getId(props)
+  let starshipId = '5'
+  if(props.urlId) {
+    starshipId = props.urlId;
+  }
 
-  return (
-    
+  return (   
     <div className={props.wrappingDiv} >
         <img className="card-img-top" src={props.imageSource} alt="Card image" style={{ width: "100%" }} />
         <div className="card-body pl-3 pb-2 border border-right-0">
@@ -17,8 +20,7 @@ function Card(props){
           <i className="fas fa-arrow-right ml-2" ></i>
           </a>
         </div>
-      </div> 
-   
+      </div>
   )
   }
 
