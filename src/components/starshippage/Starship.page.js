@@ -33,11 +33,7 @@ function StarshipPage(props) {
     setNextPage(nextPageValue);//
   }
 
-
-  console.log(previousPage, ' this is previous')
   const api = `https://swapi.co/api/starships/?page=${previousPage}`
-
-
   useEffect(() => {
     axios.get(`${api}`).then(res => {
       setTotalPage(res.data.count)
