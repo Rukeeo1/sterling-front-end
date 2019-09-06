@@ -1,20 +1,40 @@
-// import React from 'react';
-// import AliceCarousel from 'react-alice-carousel';
-// import "react-alice-carousel/lib/alice-carousel.css";
-// //import "./car.scss"
-// import Luke from '../../assests/character-1.jpg'
+import React from 'react'
+import Carousel, { Dots } from '@brainhubeu/react-carousel';
+import '@brainhubeu/react-carousel/lib/style.css';
+import planetOne from '../../assests/planet-1.jpg'
+import planetTwo from '../../assests/planet-2.jpg'
+import planetThree from '../../assests/planet-3.jpg'
+class MyCarousel extends React.Component {
+  constructor() {
+    super()
+    this.state = {
+      value: 0,
+      slides: [
+        (<div style={{ width: "400px", height: "300px" }}><img style={{ maxWidth: "100%", maxHeight: "100%" }} src={planetOne} /></div>),
+        (<div style={{ width: "300px", height: "300px" }}><img style={{ maxWidth: "100%", maxHeight: "100%" }} src={planetTwo} /></div>),
+        (<div style={{ width: "300px", height: "300px" }}><img style={{ maxWidth: "100%", maxHeight: "100%" }} src={planetThree} /></div>),
+      ],
+    }
+    this.onchange = this.onchange.bind(this);
+  }
 
-// function StarshipCarouse(){
-//   const handleOnDragStart = e => e.preventDefault()
-//   return(
-//  <AliceCarousel mouseDragEnabled >
-//       <img style={{width:"30opx", height:"300px"}} src={Luke} onDragStart={handleOnDragStart} className="yours-custom-class" />
-//       <img src={Luke} style={{width:"30opx", height:"300px"}}  onDragStart={handleOnDragStart} className="yours-custom-class" />
-//       <img src={Luke} style={{width:"30opx", height:"300px"}} onDragStart={handleOnDragStart} className="yours-custom-class" />
-//       <img src={Luke} style={{width:"30opx", height:"300px"}} onDragStart={handleOnDragStart} className="yours-custom-class" />
-//       <img src={Luke} style={{width:"30opx", height:"300px"}} onDragStart={handleOnDragStart} className="yours-custom-class" />
-//       </AliceCarousel>
-//   )
-// }
 
-// export default StarshipCarouse;
+  onchange(value) {
+    this.setState({ value });
+  }
+
+  render() {
+    return (
+      <div>
+        <Carousel
+          value={this.state.value}
+          slides={this.state.slides}
+          slidesPerPage={3}
+        />
+        <Dots value={this.state.value} onChange={this.onchange} number={this.state.slides.length} />
+      </div>
+    );
+  }
+}
+
+export default MyCarousel
