@@ -4,18 +4,18 @@ import ViewMore from '../viewmore/Viewmore'
 import axios from 'axios'
 
 function MoreAboutStarShips({ match }){
-  
+  console.log(match)
 const [starShip, setStarShip] = useState('')
 
+  const searchItem = match.url.split('/')[1]
+  console.log(searchItem,'hello rukeke')
   const starShipId = match.params['id'];
 
   useEffect(()=>{
     axios
-    .get(`https://swapi.co/api/starships/${starShipId}/`)
+    .get(`https://swapi.co/api/${searchItem}/${starShipId}/`)
     .then(response => {
       setStarShip(response.data)
-      console.log(response.data)
-      console.log(starShip)
     })
     .catch(error => {
       console.log(error.message);
@@ -24,9 +24,7 @@ const [starShip, setStarShip] = useState('')
   
   if(!starShip) return ''
   return (
- //put a duumy headeer
-//put a h1 or h2
-// do a div and display flex colum and align center...
+
 <>
  <Header />
 

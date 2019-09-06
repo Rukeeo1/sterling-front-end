@@ -19,14 +19,11 @@ function CharacterPage(props) {
   
   const filterGender = (e) => {
     const gender = e.target.value
-
     const genderToDisplay = characters.filter(character => {
       return character.gender === gender;
     })
 
     setCharacters(genderToDisplay)
-    
-    console.log(genderToDisplay,'hello rukeke');
 
   }
 
@@ -55,8 +52,7 @@ function CharacterPage(props) {
         {
           characters.map((character,index) => {
             return (
-              <CharacterCard key={index} name={character.name} imageSource={characterPictures [generateRandom() ]}  />
-          
+              <CharacterCard props={character.url} key={index} name={character.name} gender={character.gender} birth_year={character.birth_year} imageSource={characterPictures [generateRandom() ]}  />
             )
           })
         }

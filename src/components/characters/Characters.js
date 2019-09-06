@@ -1,11 +1,13 @@
 import React, {useEffect, useState} from 'react';
 import Luke from '../../assests/character-1.jpg'
 import CThirty from '../../assests/character-2.jpg'
+import CharacterThree from '../../assests/character-3.jpg'
+import CharacterFour from '../../assests/character-4.jpg'
 import CharacterCard from '../card/CharacterCard'
 import axios from 'axios'
 import './css/Characters.css'
 
-const pictures = [Luke,CThirty, Luke, CThirty]
+const pictures = [ CThirty ,CharacterFour,  CThirty , CharacterFour]
 
 
 function Characters() {
@@ -26,7 +28,7 @@ function Characters() {
     <section className="d-flex !important justify-content-center w-sm-75 w-75 m-auto flex-wrap ">
      {
        characters.map((character, index)=>{
-         return   <CharacterCard key={index} name={character.name} imageSource={pictures[index]} url={character.url}/>
+         return   <CharacterCard key={index} name={character.name} imageSource={pictures[index]} url={character.url} gender={character.gender} birth_year={character.birth_year}/>
        })
      }
     </section>
