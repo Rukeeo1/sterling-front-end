@@ -8,6 +8,7 @@ import CThirty from '../../assests/character-2.jpg'
 import Character3 from '../../assests/character-3.jpg'
 import Character4 from '../../assests/character-4.jpg'
 import SelectTagInput from '../selectTagInput/SelectTagInput'
+import Spinner from '../spinner/Spinner'
 
 
 const characterPictures = [Luke, CThirty, Character3, Character4]
@@ -16,33 +17,36 @@ const generateRandom = () => Math.floor(Math.random() * 3) + 1
 
 
 function CharacterPage(props) {
-  const [firstData, setFirstData] = useState([])
+  const [firstData, setFirstData] = useState([]);
   const [characters, setCharacters] = useState([]);
-  let  [number, setNumber] = useState(1)
+  const [loading, setLoading] = useState(false)
+
   
   const filterGender = (e) => {
     const gender = e.target.value
     const genderToDisplay = firstData.filter(character => {
       return character.gender === gender;
     })
-
     setCharacters(genderToDisplay)
-
   }
 
   useEffect(() => {
+    setLoading(true)
     axios.get('https://swapi.co/api/people').then(res => {
+      setLoading(false)
       //onload first data === 
       setFirstData(res.data.results)
       setCharacters(res.data.results)
-      setNumber(number++)
     }
     ).catch(err => {
       console.log(err)
     })
   },[])
 
+  if(loading) return <Spinner />
+
   if (!characters) return ''
+
 
   return (
     <>
