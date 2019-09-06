@@ -4,6 +4,14 @@
   margin: 50px auto;
 }
 
+.search-bar-width {
+  width: 450px !important;
+}
+@media (max-width: 480px){
+  .search-bar-width {
+    width: 250px !important;
+  }
+}
 
 .has-search .form-control {
   padding-left: 2.375rem;
