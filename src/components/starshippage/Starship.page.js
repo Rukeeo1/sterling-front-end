@@ -5,28 +5,30 @@ import Header from '../header/Header'
 import axios from 'axios'
 import ButtonGroup from '../buttonGroups/ButtonGroups'
 import starship1 from '../../assests/starship-2.jpg'
+import Spinner from '../spinner/Spinner'
 
 function StarshipPage(props) {
   let [starShips, setStarShips] = useState('');
   let [previousPage, setPreviousPage] = useState(1);
   let [nextPage, setNextPage] = useState(2);
   let [totalPage, setTotalPage] = useState('37')
+  const [loading, setLoading] = useState(false)
 
   const previousPaginationHandler = (e) => {
-    if (previousPage < 1){
+    if (previousPage < 1) {
       setNextPage(10)
-     return;
-    } 
+      return;
+    }
     setPreviousPage(previousPage--)
     const nextPageValue = ((previousPage - 1) * 10) + (starShips.length);
     setNextPage(nextPageValue);//
   }
 
   const nextPaginationHandler = (e) => {
-   if (nextPage > totalPage){
-     setNextPage('37')
-    return nextPage;
-   } 
+    if (nextPage > totalPage) {
+      setNextPage('37')
+      return nextPage;
+    }
 
     setPreviousPage(previousPage++)
     const nextPageValue = ((previousPage - 1) * 10) + (starShips.length);
@@ -35,16 +37,21 @@ function StarshipPage(props) {
 
   const api = `https://swapi.co/api/starships/?page=${previousPage}`
   useEffect(() => {
+    setLoading(true)
     axios.get(`${api}`).then(res => {
       setTotalPage(res.data.count)
       setStarShips(res.data.results)
+      setLoading(false)
     }
     ).catch(err => {
       console.log(err)
     })
   }, [previousPage])
 
+  if (loading) return <Spinner />
+
   if (!starShips) return ''
+
 
   return (
     <>

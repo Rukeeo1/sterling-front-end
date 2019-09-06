@@ -24,7 +24,6 @@ function Starships(){
   useEffect(()=> {
     setLoading(true)
     axios.get('https://swapi.co/api/starships/').then(res => {
-      console.log('response', res)
       const ships = res.data.results.slice(0,6) 
       setLoading(false)
       setStarships(ships)
