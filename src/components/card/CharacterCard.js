@@ -2,11 +2,14 @@ import React from 'react';
 import {Link} from 'react-router-dom'
 
 function CharacterCard(props) {
-  const characterId = getId(props)
+  
+const characterId = getId(props)
+
   // let starshipId = '5'
   if (props.urlId) {
-    characterId = props.urlId;
+    // characterId = props.urlId;
   }
+  //  characterId = getId(props)
   return (
     <div class="card shadow" style={{ width: "36rem" }}>
       <div class="row m-0">

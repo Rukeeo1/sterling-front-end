@@ -14,9 +14,9 @@ function Card(props) {
       <img className="card-img-top" src={props.imageSource} alt="Card" style={{ width: "100%", height:"191px"}} />
       <div className="card-body pl-3 pb-2 border border-right-0">
         <h4 className="card-title mb-1" style={{ fontSize: "20px" }}>{props.objectName}</h4>
-        <p className="card-text mb-lg-0 mt-3px">{props.description}
+        <p style={{height:"96px"}} className="card-text mb-lg-0 mt-3px">{props.description}
         </p>
-        <a href="#" className="btn btn-primary float-right my-3"><Link to={`/starships/${starshipId}`}>Read More</Link>
+        <a href="#" className="btn btn-primary float-right my-3"><Link to={`/starships/${starshipId}`} >Read More</Link>
           <i className="fas fa-arrow-right ml-2" ></i>
         </a>
       </div>

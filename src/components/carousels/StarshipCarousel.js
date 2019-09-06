@@ -9,10 +9,15 @@ class MyCarousel extends React.Component {
     super()
     this.state = {
       value: 0,
+      // slides: [
+      //   (<div style={{ width: "400px", height: "300px" }}><img style={{ maxWidth: "100%", maxHeight: "100%" }} src={planetOne} /></div>),
+      //   (<div style={{ width: "300px", height: "300px" }}><img style={{ maxWidth: "100%", maxHeight: "100%" }} src={planetTwo} /></div>),
+      //   (<div style={{ width: "300px", height: "300px" }}><img style={{ maxWidth: "100%", maxHeight: "100%" }} src={planetThree} /></div>),
+      // ],
       slides: [
-        (<div style={{ width: "400px", height: "300px" }}><img style={{ maxWidth: "100%", maxHeight: "100%" }} src={planetOne} /></div>),
-        (<div style={{ width: "300px", height: "300px" }}><img style={{ maxWidth: "100%", maxHeight: "100%" }} src={planetTwo} /></div>),
-        (<div style={{ width: "300px", height: "300px" }}><img style={{ maxWidth: "100%", maxHeight: "100%" }} src={planetThree} /></div>),
+        (<img style={{ paddingLeft:"2rem",  paddingRight: "2rem", width:"100%"}} src={planetOne} />),
+        (<img style={{  paddingLeft:"2rem",  paddingRight: "2rem" ,width:"100%"}} src={planetTwo} />),
+        (<img style={{ paddingLeft:"2rem",  paddingRight: "2rem", width:"100%"}} src={planetThree} />),
       ],
     }
     this.onchange = this.onchange.bind(this);
@@ -27,8 +32,10 @@ class MyCarousel extends React.Component {
     return (
       <div>
         <Carousel
+        infinite
           value={this.state.value}
           slides={this.state.slides}
+          centered
           slidesPerPage={3}
         />
         <Dots value={this.state.value} onChange={this.onchange} number={this.state.slides.length} />

@@ -4,6 +4,12 @@
   width: 200px;
 }
 
+@media only screen and (min-width:600px){
+  .button-group{
+    position:"relative";
+    left:"200px";
+  }
+}
 
 .custom-select select {
   display: none; /*hide original SELECT element: */
@@ -62,3 +68,5 @@
 .btn-new {
   background-color: #2A3F54;
 }
+
+

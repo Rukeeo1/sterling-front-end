@@ -34,7 +34,6 @@ function Starships(){
     })
   },[])
   
-  console.log(starships,'hello rukee')
 
   if(loading) return <Spinner />
 

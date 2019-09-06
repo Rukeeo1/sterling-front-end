@@ -8,7 +8,6 @@ function MoreAboutStarShips({ match }){
 const [starShip, setStarShip] = useState('')
 
   const searchItem = match.url.split('/')[1]
-  console.log(searchItem,'hello rukeke')
   const starShipId = match.params['id'];
 
   useEffect(()=>{

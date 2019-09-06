@@ -27,7 +27,8 @@ const Homepage = () => {
       <ViewMore page="starship"/>
       <br></br>
       <br></br>
-      <CardCarousel />
+      <div class="container"> <CardCarousel /></div>
+     
       <Popular subject="Popular Characters" />
       <Characters />
       <ViewMore page="characters"/>
