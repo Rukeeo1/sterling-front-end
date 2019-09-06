@@ -4,7 +4,6 @@ import ViewMore from '../viewmore/Viewmore'
 import axios from 'axios'
 
 function MoreAboutStarShips({ match }){
-  console.log(match)
 const [starShip, setStarShip] = useState('')
 
   const searchItem = match.url.split('/')[1]
