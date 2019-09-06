@@ -8,6 +8,8 @@ import CThirty from '../../assests/character-2.jpg'
 import Character3 from '../../assests/character-3.jpg'
 import Character4 from '../../assests/character-4.jpg'
 import SelectTagInput from '../selectTagInput/SelectTagInput'
+import Spinner from '../spinner/Spinner'
+
 
 const characterPictures = [Luke, CThirty, Character3, Character4]
 
@@ -15,32 +17,35 @@ const generateRandom = () => Math.floor(Math.random() * 3) + 1
 
 
 function CharacterPage(props) {
-  const [characters, setCharacters] = useState('');
+  const [firstData, setFirstData] = useState([]);
+  const [characters, setCharacters] = useState([]);
+  const [loading, setLoading] = useState(false)
+
   
   const filterGender = (e) => {
     const gender = e.target.value
-
-    const genderToDisplay = characters.filter(character => {
+    const genderToDisplay = firstData.filter(character => {
       return character.gender === gender;
     })
-
     setCharacters(genderToDisplay)
-    
-    console.log(genderToDisplay,'hello rukeke');
-
   }
 
   useEffect(() => {
+    setLoading(true)
     axios.get('https://swapi.co/api/people').then(res => {
-      console.log(res.data.results)
+      setLoading(false)
+      setFirstData(res.data.results)
       setCharacters(res.data.results)
     }
     ).catch(err => {
       console.log(err)
     })
-  }, [])
+  },[])
+
+  if(loading) return <Spinner />
 
   if (!characters) return ''
+
 
   return (
     <>
@@ -55,8 +60,7 @@ function CharacterPage(props) {
         {
           characters.map((character,index) => {
             return (
-              <CharacterCard key={index} name={character.name} imageSource={characterPictures [generateRandom() ]}  />
-          
+              <CharacterCard props={character.url} url={character.url} key={index} name={character.name} gender={character.gender} birth_year={character.birth_year} imageSource={characterPictures [generateRandom() ]}  />
             )
           })
         }

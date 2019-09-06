@@ -8,23 +8,21 @@ import Popular from './components/popular/Popular'
 import Characters from './components/characters/Characters'
 import StarshipPage from './components/starshippage/Starship.page'
 import CharacterPage from './components/characterpage/CharacterPage'
-
-import ReadMoreAboutCharacter from './components/readmore/ReadMoreCharacters'
 import ReadMoreAboutStarships from './components/readmore/ReadMoreStarShips'
-import ButtonGroup from './components/buttonGroups/ButtonGroups'
+import CardCarousel from './components/carousels/StarshipCarousel'
 
-import SelectInputTag from './components/selectTagInput/SelectTagInput'
 import './App.css';
 
 const Homepage = () => {
   return (
     <>
-      <Header />
+      <Header page="homepage" />
       <Popular subject="Popular Ships" />
       <Starships />
       <ViewMore page="starship"/>
       <br></br>
       <br></br>
+      <div class="container" style={{color:"white"}}> <CardCarousel /></div>
       <Popular subject="Popular Characters" />
       <Characters />
       <ViewMore page="characters"/>
@@ -40,8 +38,8 @@ function App() {
           <Route path="/" exact component={Homepage} />
           <Route path="/starship" exact component= {StarshipPage} />
           <Route path="/characters" exact component={CharacterPage} />
-          <Route path="/starship/:id" component={ReadMoreAboutStarships} />
-          <Route path="/character/:id" component={ReadMoreAboutCharacter} />
+          <Route path="/starships/:id" component={ReadMoreAboutStarships} />
+          <Route path="/people/:id" component={ReadMoreAboutStarships} />
         </Switch>
       </div>
     </Router>

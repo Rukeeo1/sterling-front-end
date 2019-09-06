@@ -1,16 +1,29 @@
-@import url("//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css");
+@import url('//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css');
 
-
-
-.search { position: relative; }
-.search input { text-indent: 30px;}
-.search .fa-search { 
+.search {
+  position: relative;
+}
+.search input {
+  text-indent: 30px;
+}
+.search .fa-search {
   position: absolute;
   top: 24px;
   left: 7px;
   font-size: 15px;
 }
 
+.search-result-area {
+  width: 70%;
+  height: fit-content;
+  display: none !important;
+  transition: 0.2s;
+  margin: 30px auto;
+}
+.show {
+  display: flex !important;
+  transition: 0.2s;
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
