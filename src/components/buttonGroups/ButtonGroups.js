@@ -1,7 +1,7 @@
 import React from 'react'
+import './css/ButtonGroup.css'
 
 function ButtonGroup(props) {
-
   return (
     <>
       <div className="button-group">
