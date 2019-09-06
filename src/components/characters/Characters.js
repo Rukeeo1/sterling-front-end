@@ -1,7 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import Luke from '../../assests/character-1.jpg'
 import CThirty from '../../assests/character-2.jpg'
-import CharacterThree from '../../assests/character-3.jpg'
 import CharacterFour from '../../assests/character-4.jpg'
 import CharacterCard from '../card/CharacterCard'
 import axios from 'axios'

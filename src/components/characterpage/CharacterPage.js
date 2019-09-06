@@ -34,7 +34,6 @@ function CharacterPage(props) {
     setLoading(true)
     axios.get('https://swapi.co/api/people').then(res => {
       setLoading(false)
-      //onload first data === 
       setFirstData(res.data.results)
       setCharacters(res.data.results)
     }

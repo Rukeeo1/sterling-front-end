@@ -11,28 +11,28 @@ class MyCarousel extends React.Component {
     this.state = {
       value: 0,
       slides: [
-        (<div class="card img-fluid" style={{ marginRight: "2rem", marginLeft: "2rem", width: "100%", color:"white" }} >
-          <img class="card-img-top" src={planetOne} style={{ width: "100%" }} />
-          <div class="card-img-overlay d-flex justify-content-center  align-content-end">
-            <h4 class="card-title align-self-end">Alderaan</h4>
+        (<div className="card img-fluid" style={{ marginRight: "2rem", marginLeft: "2rem", width: "100%", color:"white" }} >
+          <img className="card-img-top" src={planetOne} style={{ width: "100%" }} />
+          <div className="card-img-overlay d-flex justify-content-center  align-content-end">
+            <h4 className="card-title align-self-end">Alderaan</h4>
           </div>
         </div>),
-        (<div class="card img-fluid" style={{ marginRight: "2rem", marginLeft: "2rem", width: "100%" }} >
-          <img class="card-img-top" src={planetOne} style={{ width: "100%" }} />
-          <div class="card-img-overlay d-flex justify-content-center  align-content-end">
-            <h4 class="card-title align-self-end">Yavin IV</h4>
+        (<div className="card img-fluid" style={{ marginRight: "2rem", marginLeft: "2rem", width: "100%" }} >
+          <img className="card-img-top" src={planetOne} style={{ width: "100%" }} />
+          <div className="card-img-overlay d-flex justify-content-center  align-content-end">
+            <h4 className="card-title align-self-end">Yavin IV</h4>
           </div>
         </div>),
-        (<div class="card img-fluid" style={{ marginRight: "2rem", marginLeft: "2rem", width: "100%" }} >
-          <img class="card-img-top" src={planetOne} style={{ width: "100%" }} />
-          <div class="card-img-overlay d-flex justify-content-center  align-content-end">
-            <h4 class="card-title align-self-end">Hoth</h4>
+        (<div className="card img-fluid" style={{ marginRight: "2rem", marginLeft: "2rem", width: "100%" }} >
+          <img className="card-img-top" src={planetOne} style={{ width: "100%" }} />
+          <div className="card-img-overlay d-flex justify-content-center  align-content-end">
+            <h4 className="card-title align-self-end">Hoth</h4>
           </div>
         </div>),
-        (<div class="card img-fluid" style={{ marginRight: "2rem", marginLeft: "2rem", width: "100%" }} >
-          <img class="card-img-top" src={planetOne} style={{ width: "100%" }} />
-          <div class="card-img-overlay d-flex justify-content-center  align-content-end">
-            <h4 class="card-title align-self-end">Dagobah</h4>
+        (<div className="card img-fluid" style={{ marginRight: "2rem", marginLeft: "2rem", width: "100%" }} >
+          <img className="card-img-top" src={planetOne} style={{ width: "100%" }} />
+          <div className="card-img-overlay d-flex justify-content-center  align-content-end">
+            <h4 className="card-title align-self-end">Dagobah</h4>
           </div>
         </div>),
       ],
