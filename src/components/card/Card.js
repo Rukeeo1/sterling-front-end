@@ -16,7 +16,7 @@ function Card(props){
           <h4 className="card-title mb-1" style={{fontSize:"20px"}}>{props.objectName}</h4>
           <p className="card-text mb-lg-0 mt-3px">{props.description}
           </p>
-          <a href="#" className="btn btn-primary mt-lg-0 pl-4 pr-4" style={{marginLeft:"147px"}}><Link to={`/starship/${starshipId}`}>Read More</Link>
+          <a href="#" className="btn btn-primary float-right my-3"><Link to={`/starship/${starshipId}`}>Read More</Link>
           <i className="fas fa-arrow-right ml-2" ></i>
           </a>
         </div>

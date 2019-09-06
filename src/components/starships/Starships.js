@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react'
 import starship1 from '../../assests/starship-1.jpg'
 import ButtonGroup from '../buttonGroups/ButtonGroups'
+import Spinner from '../spinner/Spinner'
 import './css/Starship.css'
 import Card from '../card/Card.js'
 import axios from 'axios';
@@ -9,17 +10,24 @@ import axios from 'axios';
 
 function Starships(){
   const [starships, setStarships] = useState('');
+  const [loading, setLoading] = useState(false)
   console.log(starships,'these are')
 
   useEffect(()=> {
+    setLoading(true)
+
     axios.get('https://swapi.co/api/starships/').then(res => {
+      console.log('response', res)
       const ships = res.data.results.slice(0,6) 
+      setLoading(false)
       setStarships(ships)
     }
     ).catch(err =>{
       console.log(err)
     })
   },[])
+
+  if(loading) return <Spinner />
 
   if(!starships) return ''
   

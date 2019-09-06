@@ -110,9 +110,9 @@ function Input(props) {
     }, [searchResult, searchValue]);
 
   return (
-    <div className="search">
+    <div className="search ">
       <span className="fa fa-search" id="search"></span>
-      <input className="p-2 rounded" placeholder="Enter Search Term"  id="search-bar" onChange={(e) => setSearchValue(e.target.value)}/>
+      <input className="p-2 rounded search-bar-width" placeholder="Enter Search Term"  id="search-bar" onChange={(e) => setSearchValue(e.target.value)}/>
     </div>
   )
 }

@@ -23,7 +23,7 @@ function Characters() {
   if(!characters) return ''
 
   return (
-    <section className="d-flex !important justify-content-center flex-wrap ">
+    <section className="d-flex !important justify-content-center w-sm-75 w-75 m-auto flex-wrap ">
      {
        characters.map((character, index)=>{
          return   <CharacterCard key={index} name={character.name} imageSource={pictures[index]} url={character.url}/>
