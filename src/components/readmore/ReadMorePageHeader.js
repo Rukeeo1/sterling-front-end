@@ -16,7 +16,7 @@ import Spinner from '../spinner/Spinner'
 
 
 const characters = [CThirty, Character3, Character4];
-const planets = [planets1, planets2, planets3];
+export const planets = [planets1, planets2, planets3];
 const ships = [starship1, starship2, starship1,]
 
 
@@ -45,21 +45,21 @@ const ReadMoreHeader = (props) => {
         </ul>
         <div className="carousel-inner hello-rukee">
           <div className="carousel-item active" >
-            <img src={characters[0]} alt="Los Angeles" />
+            <img src={props.page[0]} alt="Los Angeles" />
             <div className="carousel-caption">
               <img src={starwarslogo} className="star-wars-logo" />
               <p><span>[</span>We had such a great time in LA!<span>]</span></p>
             </div>
           </div>
           <div className="carousel-item" >
-            <img src={characters[1]} alt="Chicago" />
+            <img src={props.page[1]} alt="Chicago" />
             <div className="carousel-caption">
               <img src={starwarslogo} className="star-wars-logo" />
               <p><span>[</span>We had such a great time in LA!<span>]</span></p>
             </div>
           </div>
           <div className="carousel-item">
-            <img src={characters[2]} alt="New York" />
+            <img src={props.page[2]} alt="New York" />
             <div className="carousel-caption">
               <img src={starwarslogo} className="star-wars-logo" />
               <p><span>[</span>We had such a great time in LA!<span>]</span></p>
