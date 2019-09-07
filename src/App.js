@@ -10,6 +10,7 @@ import StarshipPage from './components/starshippage/Starship.page'
 import CharacterPage from './components/characterpage/CharacterPage'
 import ReadMoreAboutStarships from './components/readmore/ReadMoreStarShips'
 import CardCarousel from './components/carousels/StarshipCarousel'
+import ReadMoreHeader from './components/readmore/ReadMorePageHeader'
 
 import './App.css';
 
@@ -40,6 +41,7 @@ function App() {
           <Route path="/characters" exact component={CharacterPage} />
           <Route path="/starships/:id" component={ReadMoreAboutStarships} />
           <Route path="/people/:id" component={ReadMoreAboutStarships} />
+          <Route path="/readmore" component={ReadMoreHeader} />
         </Switch>
       </div>
     </Router>

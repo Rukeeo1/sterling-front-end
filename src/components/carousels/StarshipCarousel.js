@@ -35,14 +35,34 @@ class MyCarousel extends React.Component {
             <h4 className="card-title align-self-end">Dagobah</h4>
           </div>
         </div>),
-      ],
+      ]
     }
     this.onchange = this.onchange.bind(this);
   }
 
   componentDidMount(){
     axios.get("https://swapi.co/api/planets").then((response)=>{
-        console.log(response.data,'these are the results');
+     
+        //loop through the data returned...
+        //create a div similar to the one we have and push into the array....
+        const tempArr = [];
+        const planetsFromSwapi = response.data.results.map(planet => {
+          // let output =
+          
+        return  `
+          (<div className="card img-fluid" style={{ marginRight: "2rem", marginLeft: "2rem", width: "100%" }} >
+          <img className="card-img-top" src={planetOne} style={{ width: "100%" }} />
+          <div className="card-img-overlay d-flex justify-content-center  align-content-end">
+            <h4 className="card-title align-self-end">${planet.name}</h4>
+          </div>
+        </div>),
+          `
+          // return output;
+
+        })
+        this.setState({
+          planets: planetsFromSwapi
+        })
     })
 }
 

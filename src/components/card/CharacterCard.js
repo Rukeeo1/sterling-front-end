@@ -14,7 +14,7 @@ const characterId = getId(props)
     <div class="card shadow" style={{ width: "36rem" }}>
       <div class="row m-0">
         <div class="col-md-6 p-0" >
-          <img src={props.imageSource} style={{height:"286px",width:"275px"}} class="w-100 h-100 h-sm-100" />
+          <img src={props.imageSource} alt="robot-card" style={{height:"286px",width:"275px"}} class="w-100 h-100 h-sm-100" />
         </div>
         <div class="col p-0 py-4" style={{background:"#f2f2f2"}}>
           <div class="card-block px-3" >
