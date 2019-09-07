@@ -1,5 +1,6 @@
-import React from 'react'
+import React,{useEffect, useState} from 'react'
 import './css/ReadMorePageHeader.css'
+import {Link} from 'react-router-dom'
 import starwarslogo from '../../assests/logo.png'
 import Luke from '../../assests/character-1.jpg'
 import CThirty from '../../assests/character-2.jpg'
@@ -35,6 +36,9 @@ const x = () => {
 }
 
 const ReadMoreHeader = (props) => {
+
+  if(!props.page)return ''
+
   return (
     <>
       <div id="demo" className="carousel slide" data-ride="carousel">
@@ -47,21 +51,21 @@ const ReadMoreHeader = (props) => {
           <div className="carousel-item active" >
             <img src={props.page[0]} alt="Los Angeles" />
             <div className="carousel-caption">
-              <img src={starwarslogo} className="star-wars-logo" />
+             <Link to="/"> <img src={starwarslogo} className="star-wars-logo" /></Link>
               <p><span>[</span>We had such a great time in LA!<span>]</span></p>
             </div>
           </div>
           <div className="carousel-item" >
             <img src={props.page[1]} alt="Chicago" />
             <div className="carousel-caption">
-              <img src={starwarslogo} className="star-wars-logo" />
+            <Link to="/"> <img src={starwarslogo} className="star-wars-logo" /></Link>
               <p><span>[</span>We had such a great time in LA!<span>]</span></p>
             </div>
           </div>
           <div className="carousel-item">
             <img src={props.page[2]} alt="New York" />
             <div className="carousel-caption">
-              <img src={starwarslogo} className="star-wars-logo" />
+            <Link to="/"> <img src={starwarslogo} className="star-wars-logo" /></Link>
               <p><span>[</span>We had such a great time in LA!<span>]</span></p>
             </div>
           </div>

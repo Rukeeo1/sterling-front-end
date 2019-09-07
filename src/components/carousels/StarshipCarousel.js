@@ -1,6 +1,7 @@
 import React from 'react'
 import Carousel, { Dots } from '@brainhubeu/react-carousel';
 import '@brainhubeu/react-carousel/lib/style.css';
+import {Link} from 'react-router-dom'
 import axios from 'axios'
 import planetOne from '../../assests/planet-1.jpg'
 import planetTwo from '../../assests/planet-2.jpg'
@@ -14,25 +15,25 @@ class MyCarousel extends React.Component {
         (<div className="card img-fluid" style={{ marginRight: "2rem", marginLeft: "2rem", width: "100%", color:"white" }} >
           <img className="card-img-top" src={planetOne} style={{ width: "100%" }} />
           <div className="card-img-overlay d-flex justify-content-center  align-content-end">
-            <h4 className="card-title align-self-end">Alderaan</h4>
+           <h4 className="card-title align-self-end"> <Link to="/planets">Alderaan</Link></h4>
           </div>
         </div>),
         (<div className="card img-fluid" style={{ marginRight: "2rem", marginLeft: "2rem", width: "100%" }} >
           <img className="card-img-top" src={planetOne} style={{ width: "100%" }} />
           <div className="card-img-overlay d-flex justify-content-center  align-content-end">
-            <h4 className="card-title align-self-end">Yavin IV</h4>
+         <h4 className="card-title align-self-end">  <Link to="/planets">Yavin IV</Link></h4>
           </div>
         </div>),
         (<div className="card img-fluid" style={{ marginRight: "2rem", marginLeft: "2rem", width: "100%" }} >
           <img className="card-img-top" src={planetOne} style={{ width: "100%" }} />
           <div className="card-img-overlay d-flex justify-content-center  align-content-end">
-            <h4 className="card-title align-self-end">Hoth</h4>
+           <h4 className="card-title align-self-end"> <Link to="/planets">Hoth</Link></h4>
           </div>
         </div>),
         (<div className="card img-fluid" style={{ marginRight: "2rem", marginLeft: "2rem", width: "100%" }} >
           <img className="card-img-top" src={planetOne} style={{ width: "100%" }} />
           <div className="card-img-overlay d-flex justify-content-center  align-content-end">
-            <h4 className="card-title align-self-end">Dagobah</h4>
+          <h4 className="card-title align-self-end">  <Link to="/planets">Dagobah</Link></h4>
           </div>
         </div>),
       ]
@@ -57,8 +58,6 @@ class MyCarousel extends React.Component {
           </div>
         </div>),
           `
-          // return output;
-
         })
         this.setState({
           planets: planetsFromSwapi
