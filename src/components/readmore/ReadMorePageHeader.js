@@ -51,21 +51,21 @@ const ReadMoreHeader = (props) => {
             <img src={props.page[0]} alt="Los Angeles" />
             <div className="carousel-caption">
              <Link to="/"> <img src={starwarslogo} className="star-wars-logo" /></Link>
-              <p><span>[</span>We had such a great time in LA!<span>]</span></p>
+              <p><span>[</span>{props.name}<span>]</span></p>
             </div>
           </div>
           <div className="carousel-item" >
             <img src={props.page[1]} alt="Chicago" />
             <div className="carousel-caption">
             <Link to="/"> <img src={starwarslogo} className="star-wars-logo" /></Link>
-              <p><span>[</span>We had such a great time in LA!<span>]</span></p>
+              <p><span>[</span>{props.name}<span>]</span></p>
             </div>
           </div>
           <div className="carousel-item">
             <img src={props.page[2]} alt="New York" />
             <div className="carousel-caption">
             <Link to="/"> <img src={starwarslogo} className="star-wars-logo" /></Link>
-              <p><span>[</span>We had such a great time in LA!<span>]</span></p>
+              <p><span>[</span>{props.name}<span>]</span></p>
             </div>
           </div>
 

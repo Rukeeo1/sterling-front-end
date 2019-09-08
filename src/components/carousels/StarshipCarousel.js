@@ -15,32 +15,34 @@ class MyCarousel extends React.Component {
         (<div className="card img-fluid" style={{ marginRight: "2rem", marginLeft: "2rem", width: "100%", color:"white" }} >
           <img className="card-img-top" src={planetOne} style={{ width: "100%" }} />
           <div className="card-img-overlay d-flex justify-content-center  align-content-end">
-           <h4 className="card-title align-self-end"> <Link to="/planets">Alderaan</Link></h4>
+           <h4 className="card-title align-self-end"> <Link to="/planets/1">Alderaan</Link></h4>
           </div>
         </div>),
         (<div className="card img-fluid" style={{ marginRight: "2rem", marginLeft: "2rem", width: "100%" }} >
           <img className="card-img-top" src={planetOne} style={{ width: "100%" }} />
           <div className="card-img-overlay d-flex justify-content-center  align-content-end">
-         <h4 className="card-title align-self-end">  <Link to="/planets">Yavin IV</Link></h4>
+         <h4 className="card-title align-self-end">  <Link to="/planets/2">Yavin IV</Link></h4>
           </div>
         </div>),
         (<div className="card img-fluid" style={{ marginRight: "2rem", marginLeft: "2rem", width: "100%" }} >
           <img className="card-img-top" src={planetOne} style={{ width: "100%" }} />
           <div className="card-img-overlay d-flex justify-content-center  align-content-end">
-           <h4 className="card-title align-self-end"> <Link to="/planets">Hoth</Link></h4>
+           <h4 className="card-title align-self-end"> <Link to="/planets/3">Hoth</Link></h4>
           </div>
         </div>),
         (<div className="card img-fluid" style={{ marginRight: "2rem", marginLeft: "2rem", width: "100%" }} >
           <img className="card-img-top" src={planetOne} style={{ width: "100%" }} />
           <div className="card-img-overlay d-flex justify-content-center  align-content-end">
-          <h4 className="card-title align-self-end">  <Link to="/planets">Dagobah</Link></h4>
+          <h4 className="card-title align-self-end">  <Link to="/planets/4">Dagobah</Link></h4>
           </div>
         </div>),
-      ]
+      ],
+      planets : []
     }
     this.onchange = this.onchange.bind(this);
   }
 
+ 
   componentDidMount(){
     axios.get("https://swapi.co/api/planets").then((response)=>{
      
@@ -48,7 +50,6 @@ class MyCarousel extends React.Component {
         //create a div similar to the one we have and push into the array....
         const tempArr = [];
         const planetsFromSwapi = response.data.results.map(planet => {
-          // let output =
           
         return  `
           (<div className="card img-fluid" style={{ marginRight: "2rem", marginLeft: "2rem", width: "100%" }} >
@@ -60,7 +61,7 @@ class MyCarousel extends React.Component {
           `
         })
         this.setState({
-          planets: planetsFromSwapi
+          planets: response.data.results
         })
     })
 }
@@ -71,6 +72,7 @@ class MyCarousel extends React.Component {
   }
 
   render() {
+    console.log(this.state.planets)
     return (
       <div>
         <Carousel

@@ -20,9 +20,7 @@ function ReadMorePlanets({match}) {
 
   return (
     <>
-      <ReadMorePageHeader page={planets} hello="rukee" />
-
-
+      <ReadMorePageHeader page={planets} name={planet.name}/>
       <div className="container">
         <h2 className="mt-5 mb-5">{planet.name}</h2>
         <div className="d-flex">
