@@ -15,7 +15,9 @@ function Header(props) {
         </Link>
         <div className="header-title" style={{ color: "red" }}>
           <div className="logo-directory">
+            <Link to="/">
             <img src={logo} alt="logo" className="star-wars-logo" />
+            </Link>
             <div className="directory">
               <p>Directory</p>
             </div>

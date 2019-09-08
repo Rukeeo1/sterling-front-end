@@ -48,21 +48,21 @@ const ReadMoreHeader = (props) => {
         </ul>
         <div className="carousel-inner hello-rukee">
           <div className="carousel-item active" >
-            <img src={props.page[0]} alt="Los Angeles" />
+            <img src={props.page[0]} alt="Los Angeles" className="img-fluid" />
             <div className="carousel-caption">
              <Link to="/"> <img src={starwarslogo} className="star-wars-logo" /></Link>
               <p><span>[</span>{props.name}<span>]</span></p>
             </div>
           </div>
           <div className="carousel-item" >
-            <img src={props.page[1]} alt="Chicago" />
+            <img src={props.page[1]} alt="Chicago" className="img-fluid" />
             <div className="carousel-caption">
             <Link to="/"> <img src={starwarslogo} className="star-wars-logo" /></Link>
               <p><span>[</span>{props.name}<span>]</span></p>
             </div>
           </div>
           <div className="carousel-item">
-            <img src={props.page[2]} alt="New York" />
+            <img src={props.page[2]} alt="New York" className="img-fluid"  />
             <div className="carousel-caption">
             <Link to="/"> <img src={starwarslogo} className="star-wars-logo" /></Link>
               <p><span>[</span>{props.name}<span>]</span></p>
