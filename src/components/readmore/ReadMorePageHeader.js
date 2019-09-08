@@ -1,5 +1,6 @@
-import React from 'react'
+import React,{useEffect, useState} from 'react'
 import './css/ReadMorePageHeader.css'
+import {Link} from 'react-router-dom'
 import starwarslogo from '../../assests/logo.png'
 import Luke from '../../assests/character-1.jpg'
 import CThirty from '../../assests/character-2.jpg'
@@ -10,31 +11,17 @@ import planets2 from '../../assests/planet-2.jpg';
 import planets3 from '../../assests/planet-3.jpg';
 import starship1 from '../../assests/starship-1.jpg';
 import starship2 from '../../assests/starship-2.jpg'
-import Spinner from '../spinner/Spinner'
 
 
+export const characters = [CThirty, Character3, Character4];
+export const planets = [planets1, planets2, planets3];
+export const ships = [starship1, starship2, starship1,]
 
-
-const characters = [CThirty, Character3, Character4];
-const planets = [planets1, planets2, planets3];
-const ships = [starship1, starship2, starship1,]
-
-
-const x = () => {
-  const arr = [1, 1, 1]
-  return arr.map(item => {
-    return (
-      <div className="carousel-item active">
-        <img src="https://www.w3schools.com/bootstrap4/ny.jpg" alt="Los Angeles" width="1100" height="500" />
-        <div className="carousel-caption">
-          <img src={starwarslogo} className="star-wars-logo" />
-          <p>We had such a great time in LA!</p>
-        </div>
-      </div>)
-  })
-}
 
 const ReadMoreHeader = (props) => {
+
+  if(!props.page)return ''
+
   return (
     <>
       <div id="demo" className="carousel slide" data-ride="carousel">
@@ -45,24 +32,24 @@ const ReadMoreHeader = (props) => {
         </ul>
         <div className="carousel-inner hello-rukee">
           <div className="carousel-item active" >
-            <img src={characters[0]} alt="Los Angeles" />
+            <img src={props.page[0]} alt="Los Angeles" className="img-fluid" />
             <div className="carousel-caption">
-              <img src={starwarslogo} className="star-wars-logo" />
-              <p><span>[</span>We had such a great time in LA!<span>]</span></p>
+             <Link to="/"> <img src={starwarslogo} className="star-wars-logo" /></Link>
+              <p><span>[</span>{props.name}<span>]</span></p>
             </div>
           </div>
           <div className="carousel-item" >
-            <img src={characters[1]} alt="Chicago" />
+            <img src={props.page[1]} alt="Chicago" className="img-fluid" />
             <div className="carousel-caption">
-              <img src={starwarslogo} className="star-wars-logo" />
-              <p><span>[</span>We had such a great time in LA!<span>]</span></p>
+            <Link to="/"> <img src={starwarslogo} className="star-wars-logo" /></Link>
+              <p><span>[</span>{props.name}<span>]</span></p>
             </div>
           </div>
           <div className="carousel-item">
-            <img src={characters[2]} alt="New York" />
+            <img src={props.page[2]} alt="New York" className="img-fluid"  />
             <div className="carousel-caption">
-              <img src={starwarslogo} className="star-wars-logo" />
-              <p><span>[</span>We had such a great time in LA!<span>]</span></p>
+            <Link to="/"> <img src={starwarslogo} className="star-wars-logo" /></Link>
+              <p><span>[</span>{props.name}<span>]</span></p>
             </div>
           </div>
 

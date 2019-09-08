@@ -11,11 +11,13 @@ function Header(props) {
     <>
       <div className="header">
         <Link to="/">
-        <img src={logo} alt="logo" className="star-wars-logo ml-lg-5 mt-5" />
+        <img src={logo} alt="logo" className="star-wars-logo ml-lg-5 mt-5 logo" />
         </Link>
         <div className="header-title" style={{ color: "red" }}>
           <div className="logo-directory">
+            <Link to="/">
             <img src={logo} alt="logo" className="star-wars-logo" />
+            </Link>
             <div className="directory">
               <p>Directory</p>
             </div>
