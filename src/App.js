@@ -43,7 +43,6 @@ function App() {
           <Route path="/characters" exact component={CharacterPage} />
           <Route path="/starships/:id" component={ReadMoreAboutStarships} />
           <Route path="/people/:id" component={ReadMoreAboutPeople} />
-          {/* <Route path="/readmore" component={ReadMoreHeader} /> */}
           <Route path="/planets/:id" component={ ReadMorePageHeader} />
         </Switch>
       </div>
