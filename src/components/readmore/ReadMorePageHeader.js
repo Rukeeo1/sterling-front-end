@@ -15,7 +15,6 @@ import Spinner from '../spinner/Spinner'
 
 
 
-
 const characters = [CThirty, Character3, Character4];
 export const planets = [planets1, planets2, planets3];
 const ships = [starship1, starship2, starship1,]
