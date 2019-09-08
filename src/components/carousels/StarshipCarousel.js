@@ -45,9 +45,6 @@ class MyCarousel extends React.Component {
  
   componentDidMount(){
     axios.get("https://swapi.co/api/planets").then((response)=>{
-     
-        //loop through the data returned...
-        //create a div similar to the one we have and push into the array....
         const tempArr = [];
         const planetsFromSwapi = response.data.results.map(planet => {
           
