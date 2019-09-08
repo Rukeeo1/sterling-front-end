@@ -1,5 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import Header from '../header/Header';
+import ReadMorePageHeader from './ReadMorePageHeader'
+import {characters} from './ReadMorePageHeader'
 import ViewMore from '../viewmore/Viewmore'
 import axios from 'axios'
 
@@ -24,7 +26,8 @@ const [starShip, setStarShip] = useState('')
   return (
 
 <>
- <Header />
+ {/* <Header /> */}
+ <ReadMorePageHeader page={characters} name={starShip.name} />
 
 <div className="container">
 

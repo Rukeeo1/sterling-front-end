@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import ReadMorePageHeader from './ReadMorePageHeader'
 import { planets } from './ReadMorePageHeader'
 import axios from 'axios'
-console.log(planets, 'hello')
+
 
 
 
