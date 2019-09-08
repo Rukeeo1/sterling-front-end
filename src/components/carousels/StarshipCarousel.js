@@ -19,13 +19,13 @@ class MyCarousel extends React.Component {
           </div>
         </div>),
         (<div className="card img-fluid" style={{ marginRight: "2rem", marginLeft: "2rem", width: "100%" }} >
-          <img className="card-img-top" src={planetOne} style={{ width: "100%" }} />
+          <img className="card-img-top" src={planetTwo} style={{ width: "100%" }} />
           <div className="card-img-overlay d-flex justify-content-center  align-content-end">
          <h4 className="card-title align-self-end">  <Link to="/planets/2">Yavin IV</Link></h4>
           </div>
         </div>),
         (<div className="card img-fluid" style={{ marginRight: "2rem", marginLeft: "2rem", width: "100%" }} >
-          <img className="card-img-top" src={planetOne} style={{ width: "100%" }} />
+          <img className="card-img-top" src={planetThree} style={{ width: "100%" }} />
           <div className="card-img-overlay d-flex justify-content-center  align-content-end">
            <h4 className="card-title align-self-end"> <Link to="/planets/3">Hoth</Link></h4>
           </div>

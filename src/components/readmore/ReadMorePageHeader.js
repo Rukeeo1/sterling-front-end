@@ -11,28 +11,12 @@ import planets2 from '../../assests/planet-2.jpg';
 import planets3 from '../../assests/planet-3.jpg';
 import starship1 from '../../assests/starship-1.jpg';
 import starship2 from '../../assests/starship-2.jpg'
-import Spinner from '../spinner/Spinner'
-
 
 
 export const characters = [CThirty, Character3, Character4];
 export const planets = [planets1, planets2, planets3];
 export const ships = [starship1, starship2, starship1,]
 
-
-const x = () => {
-  const arr = [1, 1, 1]
-  return arr.map(item => {
-    return (
-      <div className="carousel-item active">
-        <img src="https://www.w3schools.com/bootstrap4/ny.jpg" alt="Los Angeles" width="1100" height="500" />
-        <div className="carousel-caption">
-          <img src={starwarslogo} className="star-wars-logo" />
-          <p>We had such a great time in LA!</p>
-        </div>
-      </div>)
-  })
-}
 
 const ReadMoreHeader = (props) => {
 
