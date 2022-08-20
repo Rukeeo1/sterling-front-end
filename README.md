@@ -17,3 +17,12 @@ On the character page, characters can filtered by gender.
 
 Currently working on fixing minute bugs and implementing few more functionalities.
 
+## Requirements
+- you should have node and react installed
+
+## Installations
+- ```npm i``` 
+
+
+## Start Project
+- ```npm run start```
