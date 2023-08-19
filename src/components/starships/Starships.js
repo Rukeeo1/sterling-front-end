@@ -13,7 +13,7 @@ import axios from 'axios';
 
 const starshipImages = [starship1,  starship2,  starship3 , starship4,starship5, starship6]
 
-const generateRandom = () => Math.floor(Math.random() * 5) + 1  
+const generateRandom = () => Math.floor(Math.random() * 5) + 1
 
 
 
@@ -24,7 +24,7 @@ function Starships(){
   useEffect(()=> {
     setLoading(true)
     axios.get('https://swapi.co/api/starships/').then(res => {
-      const ships = res.data.results.slice(0,6) 
+      const ships = res.data.results.slice(0,6)
       setLoading(false)
       setStarships(ships)
     }
@@ -32,12 +32,12 @@ function Starships(){
       console.log(err)
     })
   },[])
-  
+
 
   if(loading) return <Spinner />
 
   if(!starships) return ''
-  
+
   return (
     <>
     <div className="d-flex justify-content-between starship-flex">
@@ -48,7 +48,7 @@ function Starships(){
           )
         })
       }
-   
+
    </div>
 
    </>
